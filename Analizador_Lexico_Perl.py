@@ -309,6 +309,70 @@ def t_DO(t):
     r'do'
     return t
 
+def t_DIE(t):
+    r'die'
+    return t
+
+def t_DEFAULT(t):
+    r'default'
+    return t
+
+def t_DECLARE(t):
+    r'declare'
+    return t
+
+def t_CONTINUE(t):
+    r'continue'
+    return t
+
+def t_CONST(t):
+    r'const'
+    return t
+
+def t_CLONE(t):
+    r'clone'
+    return t
+
+def t_CLASS(t):
+    r'class'
+    return t
+
+def t_CATCH(t):
+    r'catch'
+    return t
+
+def t_CASE(t):
+    r'case'
+    return t
+
+def t_CALLABLE(t):
+    r'callable'
+    return t
+
+def t_BREAK(t):
+    r'callable'
+    return t
+
+def t_AS(t):
+    r'as'
+    return t
+
+def t_ARRAY(t):
+    r'array'
+    return t
+
+def t_AND(t):
+    r'and'
+    return t
+
+def t_ABSTRACT(t):
+    r'abstract'
+    return t
+
+def t___HALT_COMPILER(t):
+    r'abstract'
+    return t
+
 def t_LESSEQUAL(t):
 	r'<='
 	return t
