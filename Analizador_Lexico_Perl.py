@@ -140,9 +140,7 @@ t_QUESTIONMARK = r'\?'
 t_PERCENT = r'\%'
 
 
-def t_ABS(t):
-    r'abs'
-    return t
+
 def t_XOR(t):
     r'xor'
     return t
