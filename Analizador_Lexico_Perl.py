@@ -69,7 +69,8 @@ tokens = (
      'VAR', 
      'WHILE', 
      'XOR',
-
+	
+	
      # Symbols
      'PLUS',
      'PLUSPLUS',
@@ -110,6 +111,7 @@ tokens = (
      'NUMBER',
      'Cadena1',
      'Cadena2',
+     'AND_EQUAL',	
  )
 
 t_PLUS   = r'\+'
@@ -138,7 +140,7 @@ t_DOLLARSIGN = r'\$'
 t_ATSIGN = r'\@'
 t_QUESTIONMARK = r'\?'
 t_PERCENT = r'\%'
-
+T_AND_EQUAL = r'\&='
 
 
 def t_XOR(t):
