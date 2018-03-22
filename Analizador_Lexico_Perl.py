@@ -140,90 +140,114 @@ t_QUESTIONMARK = r'\?'
 t_PERCENT = r'\%'
 
 
-def t_ABS(t):
-    r'abs'
-    return t
 def t_XOR(t):
     r'xor'
     return t
+
 def t_WHILE(t):
     r'while'
     return t
+
 def t_VAR(t):
     r'var'
     return t
+
 def t_USE(t):
     r'user'
     return t
+
 def t_UNSET(t):
     r'unset'
     return t
+
 def t_TRY(t):
     r'try'
     return t
+
 def t_TRAIT(t):
     r'trait'
     return t
+
 def t_THROW(t):
     r'throw'
     return t
+
 def t_SWITCH(t):
     r'switch'
     return t
+
 def t_STATIC(t):
     r'static'
     return t
+
 def t_RETURN(t):
     r'return'
     return t
+
 def t_REQUIRE_ONCE(t):
     r'require_once'
     return t
+
 def t_REQUIRE(t):
     r'require'
     return t
+
 def t_PUBLIC(t):
     r'public'
     return t
+
 def t_PROTECTED(t):
     r'protected'
     return t
+
 def t_PRIVATE(t):
     r'private'
     return t
+
 def t_PRINT(t):
     r'print'
     return t
+
 def t_OR(t):
     r'or'
     return t
+
 def t_NEW(t):
     r'new'
     return t
+
 def t_NAMESPACE(t):
     r'namespace'
     return t
+
 def t_LIST(t):
     r'list'
     return t
+
 def t_ISSET(t):
     r'isset'
     return t
+
 def t_INTERFACE(t):
     r'interface'
     return t
+
 def t_INSTEADOF(t):
     r'insteadof'
     return t
+
 def t_instanceof(t):
     r'instranceof'
     return t
+
 def t_INCLUDE_ONCE(t):
     r'include_once'
     return t
+
 def t_INCLUDE(t):
     r'include'
     return t
+
 def t_IMPLEMENTS(t):
     r'implements'
     return t
