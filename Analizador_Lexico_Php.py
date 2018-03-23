@@ -111,11 +111,14 @@ tokens = (
      'NUMBER',
      'Cadena1',
      'Cadena2',
-     'AND_EQUAL',	
+     'AND_EQUAL',
+     'IS_NOT_IDENTICAL',
+     'IS_NOT_EQUAL',
+	
  )
 
 t_PLUS   = r'\+'
-t_MINUS  = r'-'
+t_MINUS  = r'\-'
 t_TIMES  = r'\*'
 t_DIVIDE = r'/'
 t_EQUAL  = r'='
@@ -140,8 +143,9 @@ t_DOLLARSIGN = r'\$'
 t_ATSIGN = r'\@'
 t_QUESTIONMARK = r'\?'
 t_PERCENT = r'\%'
-T_AND_EQUAL = r'\&='
-
+t_AND_EQUAL = r'\&='
+t_IS_NOT_IDENTICAL = r'\!=='
+t_IS_NOT_EQUAL  = r'\!='
 
 def t_XOR(t):
     r'xor'
@@ -397,6 +401,14 @@ def t_MINUSMINUS(t):
 
 def t_PLUSPLUS(t):
 	r'\+\+'
+	return t
+
+def t_IS_NOT_EQUAL(t):
+	r'\!='
+	return t
+
+def t_IS_NOT_IDENTICAL(t):
+	r'\!=='
 	return t
 
 def t_NUMBER(t):
