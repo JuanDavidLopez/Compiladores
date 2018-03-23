@@ -84,6 +84,13 @@ tokens = (
      'DOUBLE_ARROW',
      'DOUBLE_COLON',
      'ELLIPSIS',
+     'FILE',
+     'FINALLY',
+     'FUNC_C',
+     'IMPLEMENTS',
+     'METHOD_C',
+     'NS_C',
+	
      # Symbols
      'PLUS',
      'INC',
@@ -94,13 +101,16 @@ tokens = (
      'TIMES',
      'DIVIDE',
      'LESS',
-     'LESSEQUAL',
+     'IS_SMALLER_OR_EQUAL',
      'GREATER',
-     'GREATEREQUAL',
+     'GREATER_OR_EQUAL',
      'EQUAL',
-     'DEQUAL',
+     'IS_IDENTICAL',
+     'IS_NOT_IDENTICAL',
+     'IS_NOT_EQUAL',
+     'SPACESHIP'
      'DISTINT',
-     'ISEQUAL',
+     'EQUAL',
      'SEMICOLON',
      'COMMA',
      'LPAREN',
@@ -119,6 +129,9 @@ tokens = (
      'DOLLARSIGN',
      'ATSIGN',
      'PERCENT',
+     'MINUS_EQUAL',
+     'MOD_EQUAL',
+     'T_MUL_EQUAL',
      # Others
      'ID',
      'VARI',
@@ -162,87 +175,115 @@ t_PERCENT = r'\%'
 def t_XOR(t):
     r'xor'
     return t
+
 def t_WHILE(t):
     r'while'
     return t
+
 def t_VAR(t):
     r'var'
     return t
+
 def t_USE(t):
     r'user'
     return t
+
 def t_UNSET(t):
     r'unset'
     return t
+
 def t_TRY(t):
     r'try'
     return t
+
 def t_TRAIT(t):
     r'trait'
     return t
+
 def t_THROW(t):
     r'throw'
     return t
+
 def t_SWITCH(t):
     r'switch'
     return t
+
 def t_STATIC(t):
     r'static'
     return t
+
 def t_RETURN(t):
     r'return'
     return t
+
 def t_REQUIRE_ONCE(t):
     r'require_once'
     return t
+
 def t_REQUIRE(t):
     r'require'
     return t
+
 def t_PUBLIC(t):
     r'public'
     return t
+
 def t_PROTECTED(t):
     r'protected'
     return t
+
 def t_PRIVATE(t):
     r'private'
     return t
+
 def t_PRINT(t):
     r'print'
     return t
+
 def t_OR(t):
     r'or'
     return t
+
 def t_NEW(t):
     r'new'
     return t
+
 def t_NAMESPACE(t):
     r'namespace'
     return t
+
 def t_LIST(t):
     r'list'
     return t
+
 def t_ISSET(t):
     r'isset'
     return t
+
 def t_INTERFACE(t):
     r'interface'
     return t
+
 def t_INSTEADOF(t):
     r'insteadof'
     return t
+
 def t_instanceof(t):
     r'instranceof'
     return t
+
 def t_INCLUDE_ONCE(t):
     r'include_once'
     return t
+
 def t_INCLUDE(t):
     r'include'
     return t
+
 def t_IMPLEMENTS(t):
     r'implements'
     return t
+
 def t_IF(t):
     r'if'
     return t
@@ -399,6 +440,26 @@ def t_DIR(t):
     r'__DIR__'
     return t
 
+def t_FILE(t):
+    r'__FILE__'
+    return t
+
+def t_FUNC_C(t):
+    r'__FUNCTION__'
+    return t
+
+def t_LINE(t):
+    r'__LINE__'
+    return t
+
+def t_METHOD_C(t):
+    r'__METHOD__'
+    return t
+
+def t_NS_C(t):
+    r'__NAMESPACE__'
+    return t
+
 def t_CONSTANT_ENCAPSED_STRING(t):
     r'(\"foo"|\'bar')'
     return t
@@ -407,19 +468,31 @@ def t_DO(t):
     r'do'
     return t
 
-def t_LESSEQUAL(t):
+def t_FINALLY(t):
+    r'finally'
+    return t
+
+def t_IMPLEMENTS(t):
+    r'implements'
+    return t
+
+def t_IS_SMALLER_OR_EQUAL(t):
 	r'<='
 	return t
 
-def t_GREATEREQUAL(t):
+def t_GREATER_OR_EQUAL(t):
 	r'>='
 	return t
 
-def t_DEQUAL(t):
-	r'!='
+def t_SPACESHIP(t):
+	r'<=>'
 	return t
 
-def t_ISEQUAL(t):
+def t_IS_NOT_EQUAL(t):
+	r'(!=|<>)'
+	return t
+
+def t_EQUAL(t):
 	r'=='
 	return t
 
@@ -429,10 +502,6 @@ def t_INC(t):
 
 def t_DEC(t):
 	r'--'
-	return t
-	
-def t_IS_NOT_EQUAL(t):
-	r'\!='
 	return t
 
 def t_IS_NOT_IDENTICAL(t):
@@ -467,8 +536,24 @@ def t_DOUBLE_COLON(t):
 	r'\:\:'
 	return t
 
+def t_IS_IDENTICAL(t):
+	r'==='
+	return t
+
 def t_ELLIPSIS(t):
 	r'\.\.\.'
+	return t
+
+def t_MINUS_EQUAL(t):
+	r'-='
+	return t
+
+def t_MOD_EQUAL(t):
+	r'%='
+	return t
+
+def t_MUL_EQUAL(t):
+	r'*='
 	return t
 
 def t_NUMBER(t):
