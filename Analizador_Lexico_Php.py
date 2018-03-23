@@ -105,9 +105,10 @@ tokens = (
      'DOT',
      'DOLLARSIGN',
      'ATSIGN',
+	 'PERCENT',
      # Others
      'ID',
-     'VAR',
+     'VARI',
      'NUMBER',
      'Cadena1',
      'Cadena2',
@@ -143,9 +144,9 @@ t_DOLLARSIGN = r'\$'
 t_ATSIGN = r'\@'
 t_QUESTIONMARK = r'\?'
 t_PERCENT = r'\%'
-t_AND_EQUAL = r'\&='
-t_IS_NOT_IDENTICAL = r'\!=='
-t_IS_NOT_EQUAL  = r'\!='
+
+
+
 
 def t_XOR(t):
     r'xor'
@@ -402,7 +403,7 @@ def t_MINUSMINUS(t):
 def t_PLUSPLUS(t):
 	r'\+\+'
 	return t
-
+	
 def t_IS_NOT_EQUAL(t):
 	r'\!='
 	return t
@@ -420,7 +421,7 @@ def t_ID(t):
     r'\w+(_\d\w)*'
     return t
 
-def t_VAR(t):
+def t_VARI(t):
     r'(\$|\@|\%)\w+(_\d\w)*'
     return t
 
@@ -464,7 +465,7 @@ if __name__ == '__main__':
 	if (len(sys.argv) > 1):
 		fin = sys.argv[1]
 	else:
-		fin = 'evaluacion.pl'
+		fin = 'evaluacion.php'
 	f = open(fin, 'r')
 	data = f.read()
 	print (data)
