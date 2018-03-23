@@ -245,7 +245,7 @@ def t_GLOBAL(t):
     return t
 
 def t_FUNCTION(t):
-    r'function'
+    r'function|cfunction'
     return t
 
 def t_FOREACH(t):
