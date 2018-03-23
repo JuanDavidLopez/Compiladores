@@ -69,14 +69,27 @@ tokens = (
      'VAR', 
      'WHILE', 
      'XOR',
-	
-	
+     'AND_EQUAL',
+     'IS_NOT_IDENTICAL',
+     'IS_NOT_EQUAL',
+     'BOOLEAN_AND',
+     'BOOLEAN_OR',
+     'CLASS_C',
+     'CONCAT_EQUAL',
+     'CONSTANT_ENCAPSED_STRING', 
+     'DEC',
+     'DIR',
+     'DIV_EQUAL',
+     'DO',
+     'DOUBLE_ARROW',
+     'DOUBLE_COLON',
+     'ELLIPSIS',
      # Symbols
      'PLUS',
-     'PLUSPLUS',
+     'INC',
      #'PLUSEQUAL',
      'MINUS',
-     'MINUSMINUS',
+     #'MINUSMINUS',
      #'MINUSEQUAL',
      'TIMES',
      'DIVIDE',
@@ -105,16 +118,14 @@ tokens = (
      'DOT',
      'DOLLARSIGN',
      'ATSIGN',
-	 'PERCENT',
+     'PERCENT',
      # Others
      'ID',
      'VARI',
      'NUMBER',
      'Cadena1',
      'Cadena2',
-     'AND_EQUAL',
-     'IS_NOT_IDENTICAL',
-     'IS_NOT_EQUAL',
+
 	
  )
 
@@ -380,6 +391,22 @@ def t___HALT_COMPILER(t):
     r'__halt_compiler'
     return t
 
+def t_CLASS_C(t):
+    r'__CLASS__'
+    return t
+
+def t_DIR(t):
+    r'__DIR__'
+    return t
+
+def t_CONSTANT_ENCAPSED_STRING(t):
+    r'(\"foo"|\'bar')'
+    return t
+
+def t_DO(t):
+    r'do'
+    return t
+
 def t_LESSEQUAL(t):
 	r'<='
 	return t
@@ -396,12 +423,12 @@ def t_ISEQUAL(t):
 	r'=='
 	return t
 
-def t_MINUSMINUS(t):
-	r'--'
+def t_INC(t):
+	r'\+\+'
 	return t
 
-def t_PLUSPLUS(t):
-	r'\+\+'
+def t_DEC(t):
+	r'--'
 	return t
 	
 def t_IS_NOT_EQUAL(t):
@@ -410,6 +437,38 @@ def t_IS_NOT_EQUAL(t):
 
 def t_IS_NOT_IDENTICAL(t):
 	r'\!=='
+	return t
+
+def t_AND_EQUAL(t):
+	r'\&='
+	return t
+
+def t_BOOLEAN_AND(t):
+	r'\&\&'
+	return t
+
+def t_BOOLEAN_OR(t):
+	r'\|\|'
+	return t
+
+def t_CONCAT_EQUAL(t):
+	r'\.\='
+	return t
+
+def t_DOUBLE_ARROW(t):
+	r'=>'
+	return t
+
+def t_DIV_EQUAL(t):
+	r'/='
+	return t
+
+def t_DOUBLE_COLON(t):
+	r'\:\:'
+	return t
+
+def t_ELLIPSIS(t):
+	r'\.\.\.'
 	return t
 
 def t_NUMBER(t):
