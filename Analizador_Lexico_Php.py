@@ -357,7 +357,7 @@ def t_CALLABLE(t):
     return t
 
 def t_BREAK(t):
-    r'callable'
+    r'break'
     return t
 
 def t_AS(t):
@@ -377,7 +377,7 @@ def t_ABSTRACT(t):
     return t
 
 def t___HALT_COMPILER(t):
-    r'abstract'
+    r'__halt_compiler'
     return t
 
 def t_LESSEQUAL(t):
