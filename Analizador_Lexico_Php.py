@@ -6,68 +6,68 @@ tokens = (
     # Reserverd words
      '__HALT_COMPILER',
      'ABSTRACT',
-     'AND', 
-     'ARRAY', 
+     'AND',
+     'ARRAY',
      'AS',
-     'BREAK', 
-     'CALLABLE', 
-     'CASE', 
-     'CATCH', 
-     'CLASS', 
-     'CLONE', 
-     'CONST', 
-     'CONTINUE', 
-     'DECLARE', 
+     'BREAK',
+     'CALLABLE',
+     'CASE',
+     'CATCH',
+     'CLASS',
+     'CLONE',
+     'CONST',
+     'CONTINUE',
+     'DECLARE',
      'DEFAULT',
-     'DIE', 
-     'DO', 
-     'ECHO', 
-     'ELSE', 
-     'ELSEIF', 
-     'EMPTY', 
+     'DIE',
+     'DO',
+     'ECHO',
+     'ELSE',
+     'ELSEIF',
+     'EMPTY',
      'ENDDECLARE',
-     'ENDFOR', 
+     'ENDFOR',
      'ENDFOREACH',
-     'ENDIF', 
-     'ENDSWITCH', 
-     'ENDWHILE', 
-     'EVAL', 
-     'EXIT', 
-     'EXTENDS', 
-     'FINAL', 
-     'FOR', 
-     'FOREACH', 
-     'FUNCTION', 
-     'GLOBAL', 
-     'GOTO', 
-     'IF', 
-     'IMPLEMENTS', 
-     'INCLUDE', 
-     'INCLUDE_ONCE', 
-     'INSTANCEOF', 
-     'INSTEADOF', 
-     'INTERFACE', 
-     'ISSET', 
-     'LIST', 
-     'NAMESPACE', 
-     'NEW', 
-     'OR', 
-     'PRINT', 
-     'PRIVATE', 
-     'PROTECTED', 
-     'PUBLIC', 
-     'REQUIRE', 
-     'REQUIRE_ONCE', 
+     'ENDIF',
+     'ENDSWITCH',
+     'ENDWHILE',
+     'EVAL',
+     'EXIT',
+     'EXTENDS',
+     'FINAL',
+     'FOR',
+     'FOREACH',
+     'FUNCTION',
+     'GLOBAL',
+     'GOTO',
+     'IF',
+     'IMPLEMENTS',
+     'INCLUDE',
+     'INCLUDE_ONCE',
+     'INSTANCEOF',
+     'INSTEADOF',
+     'INTERFACE',
+     'ISSET',
+     'LIST',
+     'NAMESPACE',
+     'NEW',
+     'OR',
+     'PRINT',
+     'PRIVATE',
+     'PROTECTED',
+     'PUBLIC',
+     'REQUIRE',
+     'REQUIRE_ONCE',
      'RETURN',
-     'STATIC', 
-     'SWITCH', 
-     'THROW', 
-     'TRAIT', 
-     'TRY', 
-     'UNSET', 
-     'USE', 
-     'VAR', 
-     'WHILE', 
+     'STATIC',
+     'SWITCH',
+     'THROW',
+     'TRAIT',
+     'TRY',
+     'UNSET',
+     'USE',
+     'VAR',
+     'WHILE',
      'XOR',
      'AND_EQUAL',
      'IS_NOT_IDENTICAL',
@@ -76,21 +76,19 @@ tokens = (
      'BOOLEAN_OR',
      'CLASS_C',
      'CONCAT_EQUAL',
-     'CONSTANT_ENCAPSED_STRING', 
+     'CONSTANT_ENCAPSED_STRING',
      'DEC',
      'DIR',
      'DIV_EQUAL',
-     'DO',
      'DOUBLE_ARROW',
      'DOUBLE_COLON',
      'ELLIPSIS',
      'FILE',
      'FINALLY',
      'FUNC_C',
-     'IMPLEMENTS',
      'METHOD_C',
      'NS_C',
-	
+
      # Symbols
      'PLUS',
      'INC',
@@ -106,13 +104,7 @@ tokens = (
      'GREATER_OR_EQUAL',
      'EQUAL',
      'IS_IDENTICAL',
-     'IS_NOT_IDENTICAL',
-     'IS_NOT_EQUAL',
      'SPACESHIP'
-     'DISTINT',
-     'EQUAL',
-     'SEMICOLON',
-     'COMMA',
      'LPAREN',
      'RPAREN',
      'LBRACKET',
@@ -120,6 +112,7 @@ tokens = (
      'LBLOCK',
      'RBLOCK',
      'COLON',
+     'SEMICOLON',
      'QUOTATIONMARKS',
      'QUOTATIONMARKS1',
      'QUESTIONMARK',
@@ -131,7 +124,8 @@ tokens = (
      'PERCENT',
      'MINUS_EQUAL',
      'MOD_EQUAL',
-     'T_MUL_EQUAL',
+     'IS_EQUAL'
+     'MUL_EQUAL',
      # Others
      'ID',
      'VARI',
@@ -139,7 +133,7 @@ tokens = (
      'Cadena1',
      'Cadena2',
 
-	
+
  )
 
 t_PLUS   = r'\+'
@@ -147,18 +141,16 @@ t_MINUS  = r'\-'
 t_TIMES  = r'\*'
 t_DIVIDE = r'/'
 t_EQUAL  = r'='
-t_DISTINT = r'!'
 t_LESS   = r'<'
 t_GREATER = r'>'
-t_SEMICOLON = ';'
-t_COMMA  = r','
-t_LPAREN = r'\('
+#t_LPAREN = r'\('
 t_RPAREN  = r'\)'
 t_LBRACKET = r'\['
 t_RBRACKET = r'\]'
 t_LBLOCK   = r'{'
 t_RBLOCK   = r'}'
 t_COLON   = r':'
+t_SEMICOLON = r';'
 t_AMPERSANT = r'\&'
 t_HASHTAG = r'\#'
 t_DOT = r'\.'
@@ -460,21 +452,13 @@ def t_NS_C(t):
     r'__NAMESPACE__'
     return t
 
-def t_CONSTANT_ENCAPSED_STRING(t):
-    r'(\"foo"|\'bar')'
-    return t
-
-def t_DO(t):
-    r'do'
-    return t
+#def t_CONSTANT_ENCAPSED_STRING(t):
+#    r'(\"foo"|\'bar')'
+#    return t
 
 def t_FINALLY(t):
     r'finally'
-    return t
-
-def t_IMPLEMENTS(t):
-    r'implements'
-    return t
+    return
 
 def t_OBJECT_OPERATOR(t):
     r'->'
@@ -514,8 +498,6 @@ def t_YIELD(t):
     r'yield'
     return t
 
-
-
 def t_IS_SMALLER_OR_EQUAL(t):
 	r'<='
 	return t
@@ -532,7 +514,7 @@ def t_IS_NOT_EQUAL(t):
 	r'(!=|<>)'
 	return t
 
-def t_EQUAL(t):
+def t_IS_EQUAL(t):
 	r'=='
 	return t
 
@@ -593,7 +575,7 @@ def t_MOD_EQUAL(t):
 	return t
 
 def t_MUL_EQUAL(t):
-	r'*='
+	r'\*='
 	return t
 
 def t_NUMBER(t):
@@ -609,7 +591,8 @@ def t_VARI(t):
     r'(\$|\@|\%)\w+(_\d\w)*'
     return t
 
-t_ignore = ' \t'
+t_ignore = ' \t| \n'
+
 
 def t_newline(t):
     r'\n+'
