@@ -476,6 +476,46 @@ def t_IMPLEMENTS(t):
     r'implements'
     return t
 
+def t_OBJECT_OPERATOR(t):
+    r'->'
+    return t
+def t_OR_EQUAL(t):
+    r'\|\='
+    return t
+def t_PLUS_EQUAL(t):
+    r'\+='
+    return t
+def t_POW(t):
+    r'\*\*'
+    return t
+def t_POW_EQUAL(t):
+    r'\*\*\='
+    return t
+def t_SL(t):
+    r'<<'
+    return t
+
+def t_SL_EQUAL(t):
+    r'<<='
+    return t
+def t_SR(t):
+    r'>>'
+    return t
+def t_SR_EQUAL(t):
+    r'>>='
+    return t
+def t_START_HEREDOC(t):
+    r'<<<'
+    return t
+def t_XOR_EQUAL(t):
+    r'^='
+    return t
+def t_YIELD(t):
+    r'yield'
+    return t
+
+
+
 def t_IS_SMALLER_OR_EQUAL(t):
 	r'<='
 	return t
